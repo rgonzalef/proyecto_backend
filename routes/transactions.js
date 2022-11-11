@@ -6,6 +6,8 @@ const prisma = new PrismaClient();
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
+const {convert} = require('../src/Utilities/utilities') 
+
 
 
 // SELECT
@@ -25,16 +27,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 
-const convert = async (conversion_rates, body, res) => {
-  const newTransaction = await prisma.transaction.create({
-    data: {
-      ...body,
-      amount: body.dollar_amount * conversion_rates,
-    },
-  });
 
-  res.status(201).json(newTransaction);
-};
 
 //CREATE
 router.post("/", async (req, res, next) => {
