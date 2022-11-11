@@ -1,0 +1,27 @@
+{
+  "name": "proyecto-backend",
+  "version": "0.0.0",
+  "private": true,
+  
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "sync-env": "npx sync-dotenv"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.6.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "node-fetch": "^3.2.10",
+    "sync-dotenv": "^2.7.0"
+  },
+  "devDependencies": {
+    "prisma": "^4.6.0"
+  }
+  
+}
+
